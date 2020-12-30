@@ -78,4 +78,35 @@
         echo ceil($pi) . '<br>';    // 4
         echo pi() . '<br>';         // 3.1415
 
+    // Booleans
+
+        // Comparisons booleans (true or false)
+            echo true; // result "1"
+            echo false; // result "" (none(empty))
+    
+        // Numbers
+            echo 5 < 10; // "1" --> ture
+            echo 5 >10; // ""  --> false
+            echo 5 == 10; // "" 
+            echo 10 == 10; // "1"
+            echo 5 !=10; // "1"
+            echo 5 <= 5; // "1"
+            echo 5 >= 5; // "1"
+
+        // Strings
+            echo 'shuan' < 'yoshi'; // "1" order of Alphabet (s<y)
+            echo 'shuan' > 'yoshi'; // ""  
+            echo 'shuan' > 'Shaun'; // "1" Lowercase one is greater than Uppercase Letter (s>S)
+            echo 'mario' == 'Mario'; // "" (m != M)  
+
+        // Loose vs Strict equal comparisons
+            echo 5 == '5'; // "1" loose comparison doesn't care type of data 
+            echo 5 ==='5'; // "" strict comparison takes into consideration type of data
+            echo 5 === 5; // "1" 
+            echo '5' === '5'; // "1"
+            echo true == "1"; // "1"
+            echo false == ""; // "1"
+            echo true === "1"; // ""
+            echo false === ""; // ""
+
 ?>
