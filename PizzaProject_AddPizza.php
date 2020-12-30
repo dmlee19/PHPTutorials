@@ -19,7 +19,7 @@
             echo htmlspecialchars($_POST['title']);
             echo htmlspecialchars($_POST['ingredients']);
         }   
-            // htmlspecialchar
+            // htmlspecialchars
             // scurity issue (when someone put script code in input space)
             // avoid cross site scripting(xxs)
 
@@ -31,7 +31,7 @@
 <?php include('PizzaProject_Templates/PizzaProject_Header.php') ?>
 
 <section class="container grey-text">
-    <h4 class="conter">Add a Pizza</h4>
+    <h4 class="center">Add a Pizza</h4>
     <form class = "white" action="PizzaProject_AddPizza.php" method="POST">
         <label>Your Email:</label>
         <input type="text" name="email"> 
