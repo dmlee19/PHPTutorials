@@ -33,16 +33,16 @@
     <h4 class="center grey-text">Pizzas!</h4>
         <div class="container">
             <div class="row">
-                <?php foreach($pizzas as $pizza){ ?>
+                <?php foreach($pizzas as $pizza): ?>
                     <div class="col s6 md3">
                         <div class="card z-depth-0">
                             <div class="card-content center">
                                 <h6><?php echo htmlspecialchars($pizza['title']) ?></h6>
                                 <ul> 
                                     <!-- ,로 구분된 각 재료를 배열로 구성한 후 각자 출력 -->
-                                    <?php foreach(explode(',', $pizza['ingredients']) as $ingredient){ ?>
+                                    <?php foreach(explode(',', $pizza['ingredients']) as $ingredient): ?>
                                         <li><?php echo htmlspecialchars($ingredient) ?></li>
-                                    <?php } ?>
+                                    <?php endforeach; ?>
                                 </ul>
                             </div>
                             <div class="card-action right-align">
@@ -50,7 +50,8 @@
                             </div>
                         </div>
                     </div>
-                <?php } ?>
+                <?php endforeach; ?>
+                <!-- alternative syntax } -> endforeach  -->
             </div>
         </div>
 
