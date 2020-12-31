@@ -38,7 +38,12 @@
                         <div class="card z-depth-0">
                             <div class="card-content center">
                                 <h6><?php echo htmlspecialchars($pizza['title']) ?></h6>
-                                <div><?php echo htmlspecialchars($pizza['ingredients']) ?></div>
+                                <ul> 
+                                    <!-- ,로 구분된 각 재료를 배열로 구성한 후 각자 출력 -->
+                                    <?php foreach(explode(',', $pizza['ingredients']) as $ingredient){ ?>
+                                        <li><?php echo htmlspecialchars($ingredient) ?></li>
+                                    <?php } ?>
+                                </ul>
                             </div>
                             <div class="card-action right-align">
                                 <a href="#" class="brand-text">More Info</a>
@@ -48,7 +53,7 @@
                 <?php } ?>
             </div>
         </div>
-        
+
     <!-- Footer -->
     <?php include('PizzaProject_Templates/PizzaProject_Footer.php') ?>
 
