@@ -1,4 +1,5 @@
 <?php 
+    include('config/ConnectDB.php');
     // GET vs POST method
     // GET: URL을 통해서 DATA를 전송 (보안에 취약)
     // POST: Request memory에 저장되서 전송
@@ -64,7 +65,21 @@
                 // error 메세지 O
             } else{
                 // error X --> 입력값이 유효하므로 다음 업무 진행
-                header('Location: PizzaProject_Main.php');
+                $email = mysqli_real_escape_string($connection, $_POST['email']);
+                $title = mysqli_real_escape_string($connection, $_POST['title']);
+                $ingredients = mysqli_real_escape_string($connection, $_POST['ingredients']);
+                
+                //create sql
+                $sql = "INSERT INTO pizzas(title,email,ingredients) VALUE('$title', '$email', '$ingredients')";
+                
+                if(mysqli_query($connection,$sql)){
+                    //success
+                    header('Location: PizzaProject_Main.php');
+                } else {
+                    // error
+                    echo 'query error: ' . mysqli_error($connection);
+                }
+                
             }
 
         
