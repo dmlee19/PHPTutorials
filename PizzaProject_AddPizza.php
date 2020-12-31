@@ -58,7 +58,17 @@
                     $errors['ingredients'] = 'Ingredients must be a comma separated list';
                 }
             }
-        }  
+        
+            //array_fillter($array) array에 값이 없으면 false, 있으면 true
+            if(array_filter($errors)){
+                // error 메세지 O
+            } else{
+                // error X --> 입력값이 유효하므로 다음 업무 진행
+                header('Location: PizzaProject_Main.php');
+            }
+
+        
+        } // end of POST check  
 
 
 ?>
