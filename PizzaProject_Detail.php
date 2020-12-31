@@ -1,19 +1,34 @@
 <?php 
-    include('config/DBconnection.php');
+    include('config/ConnectDB.php');
+    
+    if(isset($_POST['delete'])){
+        $id_to_delete = mysqli_real_escape_string($connection, $_POST['id_to_delete']);
+
+        // make sql
+        $sql = "DELETE FROM pizzas WHERE id = $id_to_delete";
+
+        if(mysqli_query($connection, $sql)){
+            // success
+            header('Location: PizzaProject_Main.php');
+        } else{
+            // failure
+            echo 'query error: '. mysqli_error($connection);
+        }
+    }
     //check GET request id parameter
     if(isset($_GET['id'])){
-        $id = mysqli_real_escape_string($conn, $_GET['id']);        
+        $id = mysqli_real_escape_string($connection, $_GET['id']);        
         // make sql
-        $sql = "SELECT title, ingredients, email, created_at FROM pizzas WHERE id = $id";
+        $sql = "SELECT id, title, ingredients, email, created_at FROM pizzas WHERE id = $id";
 
         // get the query result 
-        $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($connection, $sql);
 
         //fetch result in array format
         $pizza = mysqli_fetch_assoc($result);
 
         mysqli_free_result($result);
-        mysqli_close($conn);
+        mysqli_close($connection);
 
         // print_r($pizza);
     }
@@ -33,6 +48,12 @@
             <p><?php echo date($pizza['created_at']) ?></p>
             <p>Ingredients</p>
             <p><?php echo htmlspecialchars($pizza['ingredients']) ?></p>
+
+            <!-- Delete Form -->
+            <form action="PizzaProject_Detail.php" method="POST">
+                <input type="hidden" name="id_to_delete" value="<?php echo $pizza['id']; ?>"> 
+                <input type="submit" name="delete" value="Delete" class="btn brand z-depth-0">
+            </form>
         <?php else: ?>
             <h5>No such pizza exists!</h5>
         <?php endif; ?>
