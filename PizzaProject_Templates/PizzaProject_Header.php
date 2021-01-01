@@ -15,6 +15,9 @@
     $name = $_SESSION['name'] ?? 'Guest'; 
     // $_SESSION['name'] =Null 인 경우 ?? 뒤 Guest 사용
 
+    // get Cookie
+    $gender = $_COOKIE['gender'] ?? 'Unknown';
+
 ?>
 
 <head>
@@ -42,6 +45,7 @@
             <a href="PizzaProject_Main.php" class="brand-logo brand-text">Mario Pizza</a>
             <ul id="nav-mobile" class="right hide-on-small-and-down">
                 <li class="grey-text">Hello <?php echo htmlspecialchars($name); ?></li>
+                <li class="grey-text"> (<?php echo htmlspecialchars($gender); ?>)</li>
                 <li><a href="PizzaProject_AddPizza.php" class="btn brand z-depth-0">Add pizza</a></li>
             </ul>
         </div>
