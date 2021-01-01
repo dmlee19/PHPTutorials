@@ -11,7 +11,8 @@
         // echo $_SESSION['name']; // input data
 
 
-    //Cookie for gender
+    // Cookie for gender
+    // User Local에 저장되어 사용 (행동 유형, 마케팅 등에 사용)
 
         setcookie('gender', $_POST['gender'], time() + 86400);
         // 쿠키 설정, 86400 (24h --> sec)
