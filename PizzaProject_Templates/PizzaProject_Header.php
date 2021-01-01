@@ -1,5 +1,22 @@
 
 <!-- 모든 프로젝트 파일 앞에 포함 -->
+<?php 
+    session_start();
+    
+    //Session for name
+    //$_SESSION['name'] = 'yoshi'; //override
+
+    if($_SERVER['QUERY_STRING'] == 'noname'){ // 'query_string == 'noname' --> *.php?noname
+        unset($_SESSION['name']); // 단일 session memory 삭제
+        //session_unset(); // 모든 session 삭제
+    }
+
+    // Null Coalescing
+    $name = $_SESSION['name'] ?? 'Guest'; 
+    // $_SESSION['name'] =Null 인 경우 ?? 뒤 Guest 사용
+
+?>
+
 <head>
     <title>Mario Pizza</title>
     <!-- Materialize CSS Library -->
@@ -24,6 +41,7 @@
         <div class="container">
             <a href="PizzaProject_Main.php" class="brand-logo brand-text">Mario Pizza</a>
             <ul id="nav-mobile" class="right hide-on-small-and-down">
+                <li class="grey-text">Hello <?php echo htmlspecialchars($name); ?></li>
                 <li><a href="PizzaProject_AddPizza.php" class="btn brand z-depth-0">Add pizza</a></li>
             </ul>
         </div>
