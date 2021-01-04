@@ -143,6 +143,7 @@
       - Cookie에 저장된 gender 불러오기
      ![Header UI](https://raw.githubusercontent.com/dmlee89/PHPTutorials/master/UI/Header.JPG)
     - PizzaProject_Footer
+    
     ![Footer UI](https://raw.githubusercontent.com/dmlee89/PHPTutorials/master/UI/Footer.JPG)
     - ConnectDB
       - Main, AddPizza, Detail 파일에 include 되어 DB 연결 관리
