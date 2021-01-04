@@ -124,21 +124,25 @@
 - Pizza 메뉴를 보여주고 (Main), 추가하고 (AddPizza), 상세 내용을 확인하고, 삭제하는 (Detail) 기능을 구현한 프로젝트
 - PHP, MySQLi, HTML, CSS, Materialize(CSS)
 - 구성
-![Main UI](https://raw.githubusercontent.com/dmlee89/PHPTutorials/master/UI/Main.JPG)
   - PizzaProject_Main
     - DB에 저장된 모든 Pizza 출력
     - MySQLi Select 문
+    ![Main UI](https://raw.githubusercontent.com/dmlee89/PHPTutorials/master/UI/Main.JPG)
   - PizzaProject_AddPizza
     - Superglobal POST 사용 (email, title, ingredients)
     - input data 형식 체크 및 에러 메세지 설정 및 출력
+    ![AddPizza UI](https://raw.githubusercontent.com/dmlee89/PHPTutorials/master/UI/AddPizza.JPG)
   - PizzaProject_Datail
     - Superglobal GET 사용 (id)
       - 상세내용 출력 (MySQLi Select)
     - Superglobal POST 사용 (id)
       - 해당 메뉴 삭제 (MySQLi Delete)
+     ![Detail UI](https://raw.githubusercontent.com/dmlee89/PHPTutorials/master/UI/Detail.JPG)
     - PizzaProject_Header
       - Session에 저장된 name 불러오기
       - Cookie에 저장된 gender 불러오기
+     ![Header UI](https://raw.githubusercontent.com/dmlee89/PHPTutorials/master/UI/Header.JPG)
     - PizzaProject_Footer
+    ![Footer UI](https://raw.githubusercontent.com/dmlee89/PHPTutorials/master/UI/Footer.JPG)
     - ConnectDB
       - Main, AddPizza, Detail 파일에 include 되어 DB 연결 관리
