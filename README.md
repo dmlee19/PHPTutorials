@@ -1,7 +1,5 @@
 # PHPTutorials
 ---
-`Youtube [The Net Ninja]체널 PHP Tutorials for Begginers 강의를 보고 공부한 내용입니다.`
----
 
 1. Basic
 
@@ -156,3 +154,5 @@
     ![Footer UI](https://raw.githubusercontent.com/dmlee89/PHPTutorials/master/UI/Footer.JPG)
     - ConnectDB
       - Main, AddPizza, Detail 파일에 include 되어 DB 연결 관리
+---   
+      `Youtube [The Net Ninja]체널 PHP Tutorials for Begginers 강의를 보고 공부한 내용입니다.`
