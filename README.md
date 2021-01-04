@@ -124,6 +124,7 @@
 - Pizza 메뉴를 보여주고 (Main), 추가하고 (AddPizza), 상세 내용을 확인하고, 삭제하는 (Detail) 기능을 구현한 프로젝트
 - PHP, MySQLi, HTML, CSS, Materialize(CSS)
 - 구성
+![Main UI]9/PHPTutorials/master/UI/Main.JPG
   - PizzaProject_Main
     - DB에 저장된 모든 Pizza 출력
     - MySQLi Select 문
